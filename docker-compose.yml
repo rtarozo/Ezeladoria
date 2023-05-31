@@ -1,0 +1,64 @@
+version: "3"
+
+volumes:
+  local-postgres-data:
+  local-postgres-data-backups:
+  static-volume:
+  media-volume:
+  certs-volume:
+  pgadmin:
+
+services:
+
+  web:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: compose/django/Dockerfile
+    container_name: django
+    depends_on:
+      - db
+    volumes:
+      - static-volume:/home/django/app/static
+      - media-volume:/home/django/app/media
+    expose:
+      - 8000
+    ports:
+      - 8000:8000     
+    links:
+      - redis
+    env_file:
+      - .envs/django/dev.env
+
+  db:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: compose/postgres/Dockerfile
+    container_name: postgres
+    env_file:
+      - .envs/postgres/dev.env
+    volumes:
+      - local-postgres-data:/var/lib/postgresql/data
+      - local-postgres-data-backups:/backups
+
+  pgadmin:
+    container_name: pgadmin_ezeladoria
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - 5050:80
+
+  redis:
+    restart: unless-stopped
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+

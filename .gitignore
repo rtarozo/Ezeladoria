@@ -1,0 +1,13 @@
+*.pyc
+.idea
+.vscode
+*/*.pyc
+*/*/*.pyc
+*/migrations/*
+/__pycache__
+src/core/__pycache__/settings.cpython-35.pyc
+.DS_Store
+.env
+venv
+**/.DS_Store
+.envs

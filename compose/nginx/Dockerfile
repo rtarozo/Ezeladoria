@@ -2,8 +2,16 @@ FROM nginx
 
 # Do this apt/pip stuff all in one RUN command to avoid creating large
 # intermediate layers on non-squashable docker installs
-RUN apt update -y && apt upgrade -y && apt autoremove -y && \
-    apt install build-essential python3.9 python3.9-venv python3.9-dev certbot python3-certbot-nginx -y 
+RUN apt update -y && \
+    apt upgrade -y && \
+    apt autoremove -y && \
+    apt install \
+        build-essential \
+        python3.9 \
+        python3.9-venv \
+        python3.9-dev \
+        certbot \
+        python3-certbot-nginx -y 
 #    && \
 #    apt install -y python3 python3-dev python3-pip libffi7 libffi-dev libssl-dev curl build-essential gettext-base nginx -y && \
 #    #curl -L 'https://bootstrap.pypa.io/get-pip.py' | python && \

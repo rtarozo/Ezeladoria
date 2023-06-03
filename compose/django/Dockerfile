@@ -44,7 +44,7 @@ RUN pip install --upgrade pip
 RUN addgroup -S django && adduser -S django -G django
 
 # **if you want to install scipy uncomment the following file**
-# RUN pip3 install --no-cache-dir --disable-pip-version-check scipy==1.3.1
+#RUN pip3 install --no-cache-dir --disable-pip-version-check scipy==1.3.1
 
 # Installing requirements.pip from project
 COPY ./requirements.txt ./

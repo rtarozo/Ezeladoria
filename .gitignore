@@ -12,3 +12,4 @@ venv
 **/.DS_Store
 .envs
 Old_docker-compose.yml
+_ci.yml

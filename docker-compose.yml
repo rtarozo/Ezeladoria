@@ -19,8 +19,8 @@ services:
     depends_on:
       - db
     volumes:
-      - static-volume:/home/django/app/static
-      - media-volume:/home/django/app/media
+      - static-volume:/home/ricardo/app/static
+      - media-volume:/home/ricardo/app/media
     expose:
       - 8000
     ports:

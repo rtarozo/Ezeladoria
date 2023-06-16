@@ -29,7 +29,7 @@ RUN apk add --no-cache --virtual build-deps \
     musl-dev \
     postgresql-dev\
     zlib-dev \
-    jpeg-dev 
+    jpeg-dev \
 # un-comment if you want to install numpy, pandas, scipy etc and their supported dependencies
 # g++ \
 # openblas-dev \

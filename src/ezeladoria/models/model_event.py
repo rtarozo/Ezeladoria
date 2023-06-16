@@ -27,8 +27,9 @@ class Evento(models.Model):
     Status = models.CharField(
         max_length=2, choices=STATUS_CHOICES, blank=False, null=False)
     Tipo_Evento_Id = models.ForeignKey(TipoEvento, on_delete=models.CASCADE)
-    Endrereco = models.ForeignKey(
-        Endereco, on_delete=models.SET_NULL, blank=True, null=True)
+    #Endrereco = models.ForeignKey(
+    #    Endereco, on_delete=models.SET_NULL, blank=True, null=True)
+    Endrereco = models.BigIntegerField(blank=True, null=True)
     Empresa = models.OneToOneField(
         Empresa, on_delete=models.PROTECT, related_name="ezeladoria.Evento.Empresa+")
 

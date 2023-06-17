@@ -30,9 +30,7 @@ class Evento(models.Model):
     #Endrereco = models.ForeignKey(
     #    Endereco, on_delete=models.SET_NULL, blank=True, null=True)
     Endrereco = models.BigIntegerField(blank=True, null=True)
-    Empresa = models.OneToOneField(
-        Empresa, on_delete=models.PROTECT, related_name="ezeladoria.Evento.Empresa+")
-
+    
     class Meta:
         verbose_name = "Evento"
         verbose_name_plural = "Eventos"

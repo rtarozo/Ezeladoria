@@ -6,7 +6,6 @@ from ezeladoria.models.model_event import Evento
 
 
 class EventoSerializer(serializers.ModelSerializer):
-   
     class Meta:
         model = Evento
         fields = "__all__"

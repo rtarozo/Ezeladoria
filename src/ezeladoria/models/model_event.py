@@ -1,8 +1,8 @@
 # flake8: noqa
 from django.db import models
 
-from .model_adress import Endereco
-from .model_company import Empresa
+#from .model_adress import Endereco
+#from .model_company import Empresa
 from .model_envet_type import TipoEvento
 
 
@@ -23,7 +23,8 @@ class Evento(models.Model):
         null=False, blank=False, default=0.0, editable=True)
     Latitude = models.FloatField(
         null=False, blank=False, default=0.0, editable=True)
-    Foto = models.ImageField(upload_to="medias/")
+    Foto = models.ImageField(upload_to="medias/", max_length=None, blank=True, null=True)
+    #Foto = models.Base64ImageFild(upload_to="medias/")
     Status = models.CharField(
         max_length=2, choices=STATUS_CHOICES, blank=False, null=False)
     Tipo_Evento_Id = models.ForeignKey(TipoEvento, on_delete=models.CASCADE)

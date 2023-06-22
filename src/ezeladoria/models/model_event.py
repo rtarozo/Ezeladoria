@@ -23,7 +23,7 @@ class Evento(models.Model):
         null=False, blank=False, default=0.0, editable=True)
     Latitude = models.FloatField(
         null=False, blank=False, default=0.0, editable=True)
-    Foto = models.ImageField(upload_to="medias/", max_length=None, blank=True, null=True)
+    Foto = models.ImageField(upload_to="media/", max_length=None, blank=True, null=True)
     #Foto = models.Base64ImageFild(upload_to="medias/")
     Status = models.CharField(
         max_length=2, choices=STATUS_CHOICES, blank=False, null=False)

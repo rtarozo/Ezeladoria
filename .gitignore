@@ -13,3 +13,4 @@ venv
 .envs
 Old_docker-compose.yml
 _ci.yml
+/src/media/*.*

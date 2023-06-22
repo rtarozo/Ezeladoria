@@ -142,14 +142,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-
 CELERY_BROKER_URL = 'redis://redis:6379/0'
 CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 # gstatic is the folder where global static files stay (they are read directly in development)
 # on development, we wont use 'static' since it is where 'collectstatic' stores all static files for production
